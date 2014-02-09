@@ -1,7 +1,7 @@
-<?php
-	// Start the session
-	session_start();
-
-	// Seed the random number generator
-	srand();
+<?php
+	// Start the session
+	session_start();
+
+	// Seed the random number generator
+	srand();
 ?>
