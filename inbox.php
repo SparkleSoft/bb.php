@@ -1,7 +1,7 @@
 <?php
 	$inbox = 1;
 	require "connect.php";
-	session_start();
+
 	include "template/header.php";
 	if (!is_authed()) {
 		echo 'You must be logged in to view this page, <a href="login.php">click here</a> to login.';

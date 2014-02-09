@@ -10,8 +10,10 @@
 <tr style="border:1px solid;"><td width=32 style="border:1px solid;"><pre>     </pre></td><th width=40% style="border:1px solid;">Thread Title</th><th style="border:1px solid;" width=15%>Replies</th><th style="border:1px solid;" width=20%>Thread Starter</th><th  style="border:1px solid;"width=30%>Last Action</th></tr>
 
 <?php
+	$ForumID = mysql_real_escape_string($_GET["f"]);
+
 	// We are selecting everything from the threads section in the database and ordering them newest to oldest.
-	$sql = mysql_query("SELECT * FROM threads WHERE forum = $_GET[f] ORDER BY action DESC"); 
+	$sql = mysql_query("SELECT * FROM `threads` WHERE `forum` = '$ForumID' ORDER BY action DESC"); 
 
 	// Now we are getting our results and making them an array
 	while($r = mysql_fetch_array($sql)) {
@@ -19,8 +21,8 @@
 		// We need to convert the UNIX Timestamp entered into the database for when a thread...
 		// ... is posted into a readable date, using date().
 
-		$posted = date("jS M Y h:i",$r[posted]);
-		$action = date("jS M Y h:i",$r[action]);
+		$posted = date("jS M Y h:i",$r["posted"]);
+		$action = date("jS M Y h:i",$r["action"]);
 
 		// Now we will show the available threads
 

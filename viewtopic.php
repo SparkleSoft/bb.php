@@ -14,7 +14,7 @@
 		// Everything within the two curly brackets can read from the database using $r[]
 		// We need to convert the UNIX Timestamp entered into the database for when a thread...
 		// ... is posted into a readable date, using date().
-		$posted = date("jS M Y h:i",$r[posted]);	 
+		$posted = date("jS M Y h:i",$r["posted"]);	 
 
 		// Now this shows the thread with a horizontal rule after it.
 		echo "<table cellpadding=2px width=100% style=\"border:0px solid;border-collapse:collapse;\"><tr style=\"border:1px solid;\"><td style=\"border:1px solid;\"></td><td style=\"margin:0px 10px;border:1px solid;\">Posted on $posted:</td></tr><tr style=\"border:1px solid;\"><td style=\"border:1px solid;\" width=128>$r[author]</td><td style=\"border:1px solid;\">$r[message]</td></tr></td></tr><tr height=15 style=\"border:0px solid;\"><td></td></tr>";
@@ -33,7 +33,7 @@
 		// Everything within the two curly brackets can read from the database using $r[]
 		// We need to convert the UNIX Timestamp entered into the database for when a thread...
 		// ... is posted into a readable date, using date().
-		$posted = date("jS M Y h:i",$r[posted]);
+		$posted = date("jS M Y h:i",$r["posted"]);
 
 		// Now this shows the thread with a horizontal rule after it.
 		echo "<tr style=\"border:1px solid;\"><td style=\"border:1px solid;\"></td><td style=\"margin:0px 10px;border:1px solid;\">Posted on $posted:</td></tr><tr style=\"border:1px solid;\"><td style=\"border:1px solid;\" width=128>$r[author]</td><td style=\"border:1px solid;\">$r[message]</td></tr></td></tr><tr height=15 style=\"border:0px solid;\"><td></td></tr>";

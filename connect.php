@@ -9,6 +9,8 @@
 
 	$time = time();
 
+	$inbox = 0;
+
 	@mysql_connect("localhost", "neptune", "neptune");
 	mysql_select_db("reimubb2");
 

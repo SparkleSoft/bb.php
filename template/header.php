@@ -31,7 +31,9 @@
 											if (isset($_GET["f"])) { 
 												echo " > ";
 
-												$sql = mysql_query("SELECT * FROM forums WHERE id = $_GET[f]");
+												$ForumID = mysql_real_escape_string($_GET["f"]);
+
+												$sql = mysql_query("SELECT * FROM `forums` WHERE `id` = '$ForumID'");
 												$r = mysql_fetch_array($sql);
 												echo "<a href='bb/forum/" . $_GET["f"] . "'>";
 												echo $r["name"];
