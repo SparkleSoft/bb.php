@@ -9,7 +9,7 @@
 
 	$time = time();
 
-	mysql_connect("localhost", "neptune", "neptune");
+	@mysql_connect("localhost", "neptune", "neptune");
 	mysql_select_db("reimubb2");
 
 	// Salt Generator
