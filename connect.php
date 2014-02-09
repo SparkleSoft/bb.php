@@ -1,8 +1,8 @@
 <?php
 	$time = time();
 
-	mysql_connect("localhost", "root", "");
-	mysql_select_db("lol");
+	mysql_connect("localhost", "neptune", "neptune");
+	mysql_select_db("reimubb2");
 
 	// Salt Generator
 	function generate_salt () {

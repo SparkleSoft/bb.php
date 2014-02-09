@@ -28,22 +28,22 @@
 								<td width=300>
 									<a href="index.php">Forum Index</a>
 										<?php 
-											if (isset($_GET[f])) { 
+											if (isset($_GET["f"])) { 
 												echo " > ";
 
 												$sql = mysql_query("SELECT * FROM forums WHERE id = $_GET[f]");
 												$r = mysql_fetch_array($sql);
-												echo "<a href='bb/forum/$_GET[f]'>";
-												echo $r[name];
+												echo "<a href='bb/forum/" . $_GET["f"] . "'>";
+												echo $r["name"];
 												echo "</a>"; 	
 											} 
 
-											if (isset($_GET[id])) {
+											if (isset($_GET["id"])) {
 												echo " > "; 
-												$sql = mysql_query("SELECT * FROM threads WHERE id = $_GET[id]");
+												$sql = mysql_query("SELECT * FROM threads WHERE id = " . $_GET["id"]);
 												$r = mysql_fetch_array($sql);
-												echo "<a href='bb/forum/$_GET[f]/topic/$_GET[id]>";
-												echo $r[title];
+												echo "<a href='bb/forum/" . $_GET["f"] . "/topic/" . $_GET["id"] . "'>";
+												echo $r["title"];
 												echo "</a>";
 											}
 										?>
@@ -52,25 +52,25 @@
 								<td width=200>
 									<div align=center>
 										<?php
-											if (isset($_GET[f])) {
+											if (isset($_GET["f"])) {
 												echo "<a href=\"bb/topic/new/";
-												echo $_GET[f];
+												echo $_GET["f"];
 												echo "\">New Topic</a>";
 											} 
 
-											if (isset($_GET[id])) {
+											if (isset($_GET["id"])) {
 												echo " - <a href=\"bb/forum/";
-												echo $_GET[f]; 
+												echo $_GET["f"]; 
 												echo "/topic/"; 
-												echo $_GET[id] . "/reply"; 
+												echo $_GET["id"] . "/reply"; 
 												echo "\">Post Reply</a>";
 											}
 
 											if ($inbox) {
 												echo "<a href=\"newmessage.php\">Send Message</a>"; 
 
-												if (isset($_GET[msg])) {
-													echo " - <a href=\"newmessage.php?reply=true&msg=$_GET[msg]\">Reply</a>";
+												if (isset($_GET["msg"])) {
+													echo " - <a href=\"newmessage.php?reply=true&msg=" . $_GET["msg"] . "\">Reply</a>";
 												} 
 											}
 
@@ -104,7 +104,7 @@
 											} else { 
 												echo "<a href=\"inbox.php\">Inbox (+$unreadmsg)</a> - ";
 												echo '<a href="logout.php">Logout (';
-												echo $_COOKIE[username];
+												echo $_COOKIE["username"];
 												echo ')</a>';
 											}
 										?>

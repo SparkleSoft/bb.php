@@ -20,7 +20,7 @@
 		// We need to convert the UNIX Timestamp entered into the database for when a thread...
 		// ... is posted into a readable date, using date().
 
-		$action = date("jS M Y h:i",$r[action]);
+		$action = date("jS M Y h:i",$r["action"]);
 		// Now we will show the available threads
 
 		echo "<tr><td width=32 style=\"border:1px solid;\"><pre>     </pre></td><td style=\"border:1px solid;\" width=40%><a href=\"forum/$r[id]\">$r[name]</a><br>$r[desc]</td><td style=\"border:1px solid;\" width=15% align=center>$r[topics]<br></td><td style=\"border:1px solid;\" width=15% align=center>$r[posts]<br></td><td style=\"border:1px solid;\" width=30% align=center>$action<br></td></tr>";
