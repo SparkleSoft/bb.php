@@ -1,6 +1,5 @@
 <?php
 	$inbox = 1;
-	include 'init.php';
 	require "connect.php";
 	session_start();
 	include "template/header.php";

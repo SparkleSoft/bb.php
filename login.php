@@ -1,6 +1,4 @@
 <?php
-	// Include init file
-	include 'init.php';
 	include 'connect.php';
 
 	if (!isset($_POST['submit'])) {

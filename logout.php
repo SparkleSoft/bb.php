@@ -1,6 +1,5 @@
 <?php
 	// Include init file
-	include_once 'init.php';
 	include_once 'connect.php';
 
 	user_logout();

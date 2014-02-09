@@ -1,4 +1,12 @@
 <?php
+	// Start the session
+	session_start();
+
+	// Seed the random number generator
+	srand();
+
+	date_default_timezone_set("UTC");
+
 	$time = time();
 
 	mysql_connect("localhost", "neptune", "neptune");
