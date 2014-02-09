@@ -9,7 +9,7 @@
 	}
 ?>
 
-<form action="newtopic2.php?f=<?php echo $_GET[f]; ?>" method="POST">
+<form action="newtopic2.php?f=<?php echo $_GET["f"]; ?>" method="POST">
 <input style="border: 1px solid;width: 500px;" type="text" name="title" id="title" value="Thread Title"><br>
 <textarea style="border: 1px solid;width: 500px;" rows="10" name="message" id="topic">Topic</textarea><br>
 <input style="border: 1px solid;" type="submit" value="Post Thread">

@@ -5,7 +5,7 @@
 	mysql_query("UPDATE user SET active = $time WHERE username = '$_COOKIE[username]'"); 
 ?> 
 
-<title>bb.php - <?php $path_parts = pathinfo($_SERVER[PHP_SELF]); echo $path_parts['basename']; ?></title>
+<title>bb.php - <?php $path_parts = pathinfo($_SERVER["PHP_SELF"]); echo $path_parts['basename']; ?></title>
 
 <style> 
 	body { 
@@ -35,7 +35,7 @@
 
 												$sql = mysql_query("SELECT * FROM `forums` WHERE `id` = '$ForumID'");
 												$r = mysql_fetch_array($sql);
-												echo "<a href='bb/forum/" . $_GET["f"] . "'>";
+												echo "<a href='viewforum.php?f=" . $_GET["f"] . "'>";
 												echo $r["name"];
 												echo "</a>"; 	
 											} 
@@ -44,7 +44,7 @@
 												echo " > "; 
 												$sql = mysql_query("SELECT * FROM threads WHERE id = " . $_GET["id"]);
 												$r = mysql_fetch_array($sql);
-												echo "<a href='bb/forum/" . $_GET["f"] . "/topic/" . $_GET["id"] . "'>";
+												echo "<a href='viewtopic.php?f=" . $_GET["f"] . "&id=" . $_GET["id"] . "'>";
 												echo $r["title"];
 												echo "</a>";
 											}
@@ -55,17 +55,11 @@
 									<div align=center>
 										<?php
 											if (isset($_GET["f"])) {
-												echo "<a href=\"bb/topic/new/";
-												echo $_GET["f"];
-												echo "\">New Topic</a>";
+												echo "<a href=\"newtopic.php?f=" . $_GET["f"] . "\">New Topic</a>";
 											} 
 
 											if (isset($_GET["id"])) {
-												echo " - <a href=\"bb/forum/";
-												echo $_GET["f"]; 
-												echo "/topic/"; 
-												echo $_GET["id"] . "/reply"; 
-												echo "\">Post Reply</a>";
+												echo " - <a href=\"newreply.php?f=" . $_GET["f"] . "&id=" . $_GET["id"] . "\">Post Reply</a>";
 											}
 
 											if ($inbox) {

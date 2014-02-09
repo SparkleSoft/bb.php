@@ -2,22 +2,19 @@
 	$inbox = 1;
 	require "connect.php";
 
-	if ($_GET[reply] == true) {
-		$message_id=$_GET[msg];
+	if (isset($_GET["reply"])) {
+		$message_id=$_GET["msg"];
 		$userfinal=$_SESSION['username'];
 
-		$messageid = $_GET['message'];
-		$message = mysql_query("SELECT * FROM messages WHERE message_id = '$message_id' AND to_user = '$userfinal'");
+		$message = mysql_query("SELECT * FROM `messages` WHERE `message_id` = '$message_id' AND `to_user` = '$userfinal'");
 		$message=mysql_fetch_assoc($message);
-		$posted = date("jS M Y h:i",$message[action]);
-		$to = $message[from_user];
-		$title = "RE: " . $message[message_title];
+		$posted = date("jS M Y h:i",$message["action"]);
+		$to = $message["from_user"];
+		$title = "RE: " . $message["message_title"];
 	} else {
 		$to = "";
 		$title = "";
 	}
-
-	session_start();
 
 	include "template/header.php";
 
