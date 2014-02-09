@@ -72,6 +72,7 @@
 												if (isset($_GET[msg])) {
 													echo " - <a href=\"newmessage.php?reply=true&msg=$_GET[msg]\">Reply</a>";
 												} 
+											}
 
 										?> 
 									</div>
